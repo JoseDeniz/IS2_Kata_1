@@ -2,7 +2,7 @@ package kata1;
 
 import java.time.LocalDate;
 
-import static java.time.Month.SEPTEMBER;
+import static java.time.LocalDate.now;
 
 public class Person {
 
@@ -33,7 +33,11 @@ public class Person {
     }
 
     public int age() {
-        LocalDate testDate = LocalDate.of(2015, SEPTEMBER, 22);
-        return testDate.getYear() - dateOfBirth.getYear();
+        return today().getYear() - dateOfBirth.getYear();
     }
+
+    protected LocalDate today() {
+        return now();
+    }
+
 }
